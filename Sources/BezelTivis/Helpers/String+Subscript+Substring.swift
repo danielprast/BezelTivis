@@ -14,8 +14,8 @@ public extension String {
     return count
   }
 
-  subscript (i: Int) -> String {
-    return self[i ..< i + 1]
+  func getChar(at offset: Int) -> Character {
+    self[index(startIndex, offsetBy: offset)]
   }
 
   func substring(fromIndex: Int) -> String {
@@ -24,6 +24,10 @@ public extension String {
 
   func substring(toIndex: Int) -> String {
     return self[0 ..< max(0, toIndex)]
+  }
+
+  subscript (i: Int) -> String {
+    return self[i ..< i + 1]
   }
 
   subscript (r: Range<Int>) -> String {
